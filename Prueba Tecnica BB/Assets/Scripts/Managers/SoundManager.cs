@@ -17,6 +17,7 @@ public class SoundManager : MonoBehaviour
 
     void Start()
     {
+        mainSound.volume = 33;
         gainEvent.GEvent += GainPointSound; // se subscriben las funciones a sus respectivos eventos
         loseEvent[0].GEvent += LosePointSound;
         loseEvent[1].GEvent += LosePointSound;

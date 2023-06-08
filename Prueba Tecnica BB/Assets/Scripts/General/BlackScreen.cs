@@ -5,7 +5,7 @@ using UnityEngine;
 public class BlackScreen : MonoBehaviour
 {
     [SerializeField] private REvents endLevel;
-    [SerializeField] private Vector2 newPosition; //la posicion a la que se mueve fuera de pantalla
+    [SerializeField] private Vector2 newPosition,initialPosition; //la posicion a la que se mueve fuera de pantalla
     
     void Start()
     {
@@ -15,7 +15,7 @@ public class BlackScreen : MonoBehaviour
 
     void MoveScreen()
     {
-        transform.LeanMoveLocal(Vector2.zero, 2f).setEaseOutQuart(); //despalzamiento de la pantalla negra cerrando
+        transform.LeanMoveLocal(initialPosition, 2f).setEaseOutQuart(); //despalzamiento de la pantalla negra cerrando
     }
     private void OnDestroy()
     {
