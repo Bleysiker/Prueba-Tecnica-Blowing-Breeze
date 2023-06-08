@@ -34,7 +34,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &2551785962705701750
 MeshFilter:
@@ -116,7 +116,7 @@ Rigidbody:
   m_GameObject: {fileID: 5008657784635369902}
   serializedVersion: 4
   m_Mass: 1
-  m_Drag: 0
+  m_Drag: 1
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
@@ -146,8 +146,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72e9676f718975e4398e5d25ab0eb561, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 15
+  movementSpeed: 20
   rotationSpeed: 10
-  jumpForce: 5
+  jumpForce: 10
   knockBackForce: 6
   knockBack: {fileID: 11400000, guid: 9def9885d63b39a45b7474702c9fc3ba, type: 2}
+  isGrounded: 1
