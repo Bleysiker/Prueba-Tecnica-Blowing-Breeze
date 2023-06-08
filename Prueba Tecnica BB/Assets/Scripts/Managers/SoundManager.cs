@@ -9,7 +9,7 @@ public class SoundManager : MonoBehaviour
     [SerializeField] private AudioClip losePoint;  //los audioclips de los sonidos adicionales
     [SerializeField] private AudioClip gainPoint;
     [SerializeField] private AudioClip finishLevel;
-    [Range(0,35)]
+    [Range(0,20)]
     [SerializeField] private int soundVolume;   //volumen que se le va a restar al sonido del fondo
     [SerializeField] private REvents gainEvent; //referencias a los eventos del juego
     [SerializeField] private REvents[] loseEvent;

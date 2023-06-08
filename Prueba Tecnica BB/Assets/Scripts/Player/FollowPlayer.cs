@@ -16,6 +16,7 @@ public class FollowPlayer : MonoBehaviour
     private void Start()
     {
         displacement = transform.position - player.position; // Calcular el desplazamiento inicial
+        Cursor.lockState = CursorLockMode.Locked; //bloquea el cursor en medio de la pantalla
     }
 
     private void LateUpdate()

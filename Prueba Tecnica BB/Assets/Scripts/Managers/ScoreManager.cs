@@ -42,7 +42,17 @@ public class ScoreManager : MonoBehaviour
     }
     void Save()
     {
-        PlayerPrefs.SetInt("ActualScore", points); //se guarda el score en la variable ActualScore
+        if (firstLvl == false)
+        {
+            if (PlayerPrefs.GetInt("HighScore") < points)
+            {
+                PlayerPrefs.SetInt("HighScore", points); //se guarda el mayor puntaje
+            }
+        }
+        else
+        {
+            PlayerPrefs.SetInt("ActualScore", points); //se guarda el score en la variable ActualScore
+        }
     }
     private void OnDestroy()
     {
