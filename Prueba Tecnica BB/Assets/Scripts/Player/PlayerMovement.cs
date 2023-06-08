@@ -21,11 +21,11 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
 
-        float horizontalMovement = Input.GetAxis("Horizontal");
+        float horizontalMovement = Input.GetAxis("Horizontal"); //se toman los valores de las teclas WASD
         float verticalMovement = Input.GetAxis("Vertical");
 
         Vector3 movement = transform.forward * verticalMovement * movementSpeed +
-                           transform.right * horizontalMovement * movementSpeed;
+                           transform.right * horizontalMovement * movementSpeed; //se establece el vector velocidad con respecto a los valores que se obtuvieron
 
         rb.MovePosition(transform.position + movement * Time.deltaTime);
 
@@ -45,19 +45,19 @@ public class PlayerMovement : MonoBehaviour
 
     private void Jump()
     {
-        rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+        rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse); //salta con respecto a un vector que va hacia arriba
     }
 
     private void KnockBack()
     {
-        rb.AddForce(((Vector3.up+(-transform.forward))) * knockBackForce, ForceMode.Impulse);
+        rb.AddForce(((Vector3.up+(-transform.forward))) * knockBackForce, ForceMode.Impulse); //el knockback se genera del vector resultante entre el vector que apunta hacia arriba y el vector que apunta atras
         StartCoroutine(KnockBackTime(1.2f));
     }
 
     IEnumerator KnockBackTime(float time)
     {
         yield return new WaitForSeconds(time);
-        rb.isKinematic = true;
+        rb.isKinematic = true;//se frena la fuerza generada por el knockback
         rb.isKinematic = false;
     }
     private void OnDestroy()
